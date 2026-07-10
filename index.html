@@ -1,4 +1,8 @@
-﻿
+
+
+
+
+
 
 
 
@@ -732,6 +736,129 @@ font-size: 0.5em;
 color: #b8a085;
 }
 
+/* ==== ОБ АВТОРЕ ==== */
+
+.author-section {
+background: #1f1813;
+border: 1px solid #4d3824;
+border-radius: 16px;
+padding: 30px;
+transition: 0.3s;
+}
+
+.author-section:hover {
+border-color: #6b4f32;
+}
+
+.author-content {
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+align-items: flex-start;
+}
+
+.author-photo {
+flex: 0 0 120px;
+text-align: center;
+}
+
+.author-avatar {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background: linear-gradient(145deg, #2d1f16, #1a1410);
+border: 3px solid #b8863a;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 3.5em;
+box-shadow: 0 0 40px rgba(184, 134, 58, 0.15);
+transition: 0.3s;
+margin: 0 auto;
+}
+
+.author-section:hover .author-avatar {
+transform: scale (1.05);
+box-shadow: 0 0 60px rgba(184, 134, 58, 0.25);
+border-color: #f0d8b0;
+}
+
+.author-info {
+flex: 1;
+min-width: 200px;
+}
+
+.author-name {
+font-size: 2em;
+color: #f0d8b0;
+font-weight: bold;
+margin-bottom: 8px;
+letter-spacing: 1px;
+}
+
+.author-bio p {
+color: #c4b8a8;
+line-height: 1.8;
+font-size: 1em;
+text-align: justify;
+margin-bottom: 12px;
+}
+
+.author-bio p:last-child {
+margin-bottom: 0;
+}
+
+.author-bio strong {
+color: #f0d8b0;
+font-weight: normal;
+}
+
+.author-quote {
+margin-top: 18px;
+padding: 18px 25px;
+background: #251e18;
+border-left: 4px solid #b8863a;
+border-radius: 10px;
+font-style: italic;
+font-size: 1.15em;
+color: #dac09a;
+line-height: 1.6;
+}
+
+.author-quote span {
+display: block;
+margin-top: 8px;
+font-style: normal;
+color: #b8a085;
+font-size: 0.85em;
+text-align: right;
+}
+
+.author-tags {
+display: flex;
+gap: 12px;
+flex-wrap: wrap;
+margin-top: 16px;
+}
+
+.author-tags .tag {
+display: inline-block;
+padding: 5px 16px;
+background: #2d1f16;
+border: 1px solid #4d3824;
+border-radius: 30px;
+font-size: 0.85em;
+color: #b8a085;
+transition: 0.3s;
+}
+
+.author-tags .tag:hover {
+background: #3d2a1e;
+border-color: #b8863a;
+color: #f0d8b0;
+}
+
+
 /* ==== РЕЙТИНГ ==== */
 
 .rating-section {
@@ -978,22 +1105,45 @@ transform: translateY(0);
 }
 
 @media (max-width: 600px) {
-.header h1 {font-size: 2.6em}
+.header h1 {font-size: 2.4em}
 .container {padding: 20px 15px;}
 .books-grid {grid-template-columns: 1fr;}
 .interactive-block .question {font-size: 1.4em}
+.interactive-block .welcome-message {font-size: 1.2em}
+.btn-choice {padding: 12px 30px;
+	font-size: 1.1em;
+	min-width: 100px;
+}
+.btn-no.visible {padding: 12px 30px;
+	min-width: 100px;
+}
 #scrollTopBtn {bottom: 20px;
 	right: 20px;
 	width: 44px;
 	height: 44px;
 	font-size: 24px;
 	}
+.rating-stats {gap: 15px; justify-content: center;}
+.rating-number {font-size: 2.4em;}
+.rating-stars-big {font-size: 1.8em;}
+.vote-section {justify-content: center;}
+.stars-input label{font-size: 1.6em;}
+.reviews-grid {grid-template-columns: 1fr;}
+.progress-title {font-size: 1.2em;}
+.progress-total-value {font-size: 1.8em;}
+.progress-section {padding: 20px 15px;}
+.modal-body {flex-direction: column; align-items: center;}
+.modal-cover {flex: 0 0 auto; max-width: 160px;}
+.modal-content {padding: 25px 20px;}
+.modal-info .book-title {font-size: 1.6em;}
+.book-actions {flex-direction: column; align-items: center;}
+.buy-links {justify-content: center;}
 }
 
 @media (max-width: 450px) {
 .books-grid {grid-template-columns: 1fr;}
-.buy-links {flex-direction: column; align-items:center;}
 .btn-group {gap: 15px;}
+.progress-categories {gap: 12px;}
 }
 
 </style>
@@ -1062,8 +1212,8 @@ transform: translateY(0);
 	   <button class="detail-btn" onclick="openModal(1)"> 📖 Подробнее </button>
 	   	<div class="buy-links">
 		<a href="https://www.litres.ru/book/aleksandr-terrek/reggilium-kniga-1-tom-1-70766731/" class="buy-btn">Литрес</a>
-		<a href="#" class="buy-btn">Ozon</a>
-		<a href="#" class="buy-btn">WB</a>
+		<a href="https://www.ozon.ru/product/reggilium-kn-1-terrek-aleksandr-1731341393/?at=MZtv1AvqxTR73QJBfwJo9gmTqpy0rocE4m40Ytjl9wwQ&is_apparel_size_selected=true" class="buy-btn">Ozon</a>
+		<a href="https://www.wildberries.ru/catalog/271526463/detail.aspx" class="buy-btn">WB</a>
 	     </div>
    	</div>
    </div>
@@ -1084,8 +1234,8 @@ transform: translateY(0);
 	   <button class="detail-btn" onclick="openModal(2)"> 📖 Подробнее </button>
    	<div class="buy-links">
 		<a href="https://www.litres.ru/book/aleksandr-terrek/reggilium-kniga-1-tom-2-73052233/" class="buy-btn">Литрес</a>
-		<a href="#" class="buy-btn">Ozon</a>
-		<a href="#" class="buy-btn">WB</a>
+		<a href="https://www.ozon.ru/product/reggilium-kn-1-t-2-terrek-aleksandr-2273504494/?at=83tB0KB6OSnQX9yxtm5wGqpTo4lzXWFx04yPVhpPB4R3&is_apparel_size_selected=true" class="buy-btn">Ozon</a>
+		<a href="https://www.wildberries.ru/catalog/439125370/detail.aspx" class="buy-btn">WB</a>
 	     </div>
    	</div>
    </div>
@@ -1105,9 +1255,9 @@ transform: translateY(0);
 	<div class="book-actions">
 	   <button class="detail-btn" onclick="openModal(3)"> 📖 Подробнее </button>
    	<div class="buy-links">
-		<a href="#" class="buy-btn">Литрес</a>
-		<a href="#" class="buy-btn">Ozon</a>
-		<a href="#" class="buy-btn">WB</a>
+		<a href="https://www.litres.ru/book/aleksandr-terrek/reggilium-kniga-1-tom-3-74131022/" class="buy-btn">Литрес</a>
+		<a href="https://www.ozon.ru/product/reggilium-kniga-1-tom-3-terrek-aleksandr-3814778042/?at=WPtNKWN5zTxjPOL4S02RqmGFP59q1OsoxLZqlSPpAB8D&is_apparel_size_selected=true" class="buy-btn">Ozon</a>
+		<a href="https://www.wildberries.ru/catalog/937932785/detail.aspx" class="buy-btn">WB</a>
 	     </div>
    	</div>
    </div>
@@ -1127,7 +1277,7 @@ transform: translateY(0);
 	<h2>В работе</h2>
 	<div class="progress-section">
 	   <div class="progress-header">
-		<div class="progress-title">Реггилиум. Книга 4. <small>Книга 2. Том 1.</small></div>
+		<div class="progress-title">Реггилиум <small>Книга 2. Том 1.</small></div>
 	   	<div class="progress-status"><span class="dot"></span> В работе</div>
 	   </div>
 
@@ -1171,6 +1321,43 @@ transform: translateY(0);
 	</div>
 </div>
 
+  <!-- ОБ АВТОРЕ -->
+<div class="section">
+   <h2>Об авторе</h2>
+   <div class="author-section">
+	<div class="author-content">
+	   <div class="author-photo">
+		<div class="author-avatar">
+		   <span>✍️</span>
+		</div>
+	   </div>
+		   <div class="author-name">Александр Террек</div>
+		   <div class="author-bio">
+			<p> Александр Террек — <strong>писатель и сатирик</strong>, чьё имя уже стало для многих синонимом живого, точного и бескомпромиссного слова. 
+			Однако литература — лишь одна из граней этого удивительного человека.</p>
+			<p> По образованию Александр — инженер-механик: за его плечами Балтийская государственная академия и школа морского дела. Сегодня он 
+			повелевает стихией иного рода — <strong>с 2017</strong> года работает начальником районной тепловой станции, в прямом смысле отвечая за 
+			тепло в домах.</p>
+			<p>Интеллект и эрудиция <strong>Александра</strong> не раз проходили проверку публичностью: он — участник телевизионной программы «Слабое звено», 
+			где сумел достойно проявить себя в острейшей интеллектуальной дуэли.</p>
+			<p>Есть в его арсенале и музыка. Пять альбомов, записанных в составе культовой альтернативной группы <strong>«Here to disagree»</strong>, — 
+			свидетельство того, что творческая энергия Александра не знает жанровых границ.</p>
+			<p>Родился <strong>в 1989 году</strong> и по сей день живёт <strong>в Калининграде</strong> — городе, где море встречается с историей, а характер 
+			закаляется балтийским ветром.</p>
+		   </div>
+		   <div class="author-quote">"Я человек, который согревает — словом, делом и музыкой."
+			<span>Александр Террек</span>
+		   </div>
+		   <div class="author-tags">
+			<span class="tag">🔥 Начальник теплоснабжения</span>
+			<span class="tag">📖 Пишет с 2004 года</span>
+			<span class="tag">✨ Автор "Реггилиума"</span>
+			<span class="tag">🌙 Сатирик, легенда</span>
+		   </div>
+	</div>
+   </div>
+</div>
+
 
   <!-- ОТЗЫВЫ И РЕЙТИНГ -->
 <div class="section">
@@ -1191,7 +1378,7 @@ transform: translateY(0);
 	  <span class="star-filled">★</span>
 	  <span class="star-half">★</span>
 	</div>
-	<div class="rating-count">Основано на 67 оценках</div>
+	<div class="rating-count" id="ratingCount">Основано на 67 оценках</div>
      </div>
   </div>
 
@@ -1260,9 +1447,9 @@ transform: translateY(0);
   <!-- ФУТЕР -->
 <div class="footer">
 <div class="socials">
-	<a href="#" target="_blank"> Instagram </a>
-	<a href="#" target="_blank"> VK </a>
-	<a href="#" target="_blank"> YouTube </a>
+	<a href="https://www.instagram.com/aleksandrterrek" target="_blank"> Instagram </a>
+	<a href="https://www.vk.ru/terrek_reggilium" target="_blank"> VK </a>
+	<a href="https://www.youtube.com/@aleksandrterrek?si=4dKOtvi8iDilH7Vu" target="_blank"> YouTube </a>
 </div>
  <div class="copy">
   <span> Александр Террек</span> · Все права защищены · 2026 <br/>
@@ -1282,14 +1469,18 @@ transform: translateY(0);
 	   <div class="modal-info">
 		<div class="book-title">Реггилиум. Том 1.</div>
 		<div class="book-subtitle">Книга 1</div>
-		<div class="book-synopsis"> В мире, где магия пронизывает каждый камень, а древние пророчества хранят ключи
-		к судьбам народов, начинается великое противостояние. Молодой герой, не знающий своего истинного предназначения, 
-		отправляется в путь, который изменит не только его жизнь, но и весь мир. Тени прошлого и надежды будущего переплетаются
-		в эпической истории о борьбе, дружбе и любви.</div>
+		<div class="book-synopsis"> Мир под названием Эйнхрон оказался крайне враждебен к Новым Богам. Сокрытый в его 
+		недрах артефакт, хранящий мудрость предшественников, известный в летописях как Реггилиум, должен расставить всё на свои места. 
+		Но достанется он только одному из них.<br/>
+		Два Храма. Два центра мироздания. Две могущественные коалиции магов. Восток против Запада. Таков устоявшийся миропорядок. 
+		Но ничто не вечно. Погрязнув в противостоянии друг с другом, Новые Боги Эйнхрона даже не подозревают, что настоящая угроза их 
+		власти таится в простых смертных – тех, кто был призван безропотно им служить. 
+		Череда ошибок, допущенных Богами, неминуемо тянет мир в пучину Тьмы. Но расставаться со своей властью они не намерены. 
+		Остановиться – значит лишиться всего. Что победит: алчность и жестокость Высших сил или праведный гнев простых смертных?</div>
 		<div class="book-meta">
 		   <div><strong>📖 Том:</strong> <span>I</span></div>
 		   <div><strong>📅 Год:</strong> <span>2024</span></div>
-		   <div><strong>📄 Страниц:</strong> <span>420</span></div>
+		   <div><strong>📄 Страниц:</strong> <span>344</span></div>
 		   <div><strong>★ Рейтинг:</strong> <span>4.9/5.0</span></div>
 		</div>
 	   </div>
@@ -1306,14 +1497,17 @@ transform: translateY(0);
 	   <div class="modal-info">
 		<div class="book-title">Реггилиум. Том 2.</div>
 		<div class="book-subtitle">Книга 1</div>
-		<div class="book-synopsis"> Герои сталкиваются с последствиями своих решений. Тайны, которые казались забытыми 
-		возвращаются, чтобы бросить вызов всему, что они знали. Вторая часть саги раскрывает тёмные стороны мира
-		Реггилиума, где каждый шаг может стать последним. Новые союзники и старые враги ведут героев к неизбежному
-		столкновению.</div>
+		<div class="book-synopsis"> Череда ошибок, допущенных Новыми Богами Эйнхрона, неминуемо тянет мир в пучину Тьмы. Погрязнув в 
+		противостоянии, Храмы Востока и Запада упустили из виду возрождение древнего Ордена тёмных колдунов, мечтающих лишь об одном – 
+		приблизить наступление загадочного Очищения – губительного процесса слияния мира с Первородной Тьмой.<br/>
+		И пока один Бог пытается любой ценой подчинить себе непокорного избранника, а второй разочаровывается в своём ближайшем приспешнике, 
+		за их спинами плетёт сеть своих интриг талантливый маг, известный в миру под прозвищем – Провокатор.<br/>  
+		Меж тем герои, бросившие вызов Высшим силам, встречаются с новыми испытаниями, а настоящее зло таится в тех, 
+		кто должен был ему противостоять.</div>
 		<div class="book-meta">
 		   <div><strong>📖 Том:</strong> <span>II</span></div>
 		   <div><strong>📅 Год:</strong> <span>2025</span></div>
-		   <div><strong>📄 Страниц:</strong> <span>445</span></div>
+		   <div><strong>📄 Страниц:</strong> <span>338</span></div>
 		   <div><strong>★ Рейтинг:</strong> <span>5.0/5.0</span></div>
 		</div>
 	   </div>
@@ -1330,13 +1524,18 @@ transform: translateY(0);
 	   <div class="modal-info">
 		<div class="book-title">Реггилиум. Том 3.</div>
 		<div class="book-subtitle">Книга 1</div>
-		<div class="book-synopsis"> Финальная битва приближается. Миры сходятся в решающей схватке, где ставки выше, 
-		чем когла-либо. Герои должны сделать выбор, которые определит судьбу всего сущего. В третьем томе раскрываются 
-		все тайны, заложенные в первых книгах, и читателя ждёт захватывающее завершение эпической саги о Реггилиуме.</div>
+		<div class="book-synopsis"> Тучи продолжают сгущаться над землями Эйнхрона. Ведомый праведным гневом король Кримзохха готов объявить войну 
+		погрязшему во внутренних противоречиях Храму илларионитов. Тьма не дремлет: в непроходимых дебрях северных лесов обретает силу некто Шестой Демон, 
+		а далеко на юге ищут ключ к вечной жизни колдуны Харавеса.<br/>
+		Меж тем над Храмом викентийцев нависает угроза иного порядка, ибо тёмный маг по прозвищу Провокатор продолжает плести паутину интриг, 
+		переманивая на свою сторону всё больше новых союзников. Раса островных изгнанников, бандиты, головорезы и оккультисты всех мастей – все они 
+		готовы вступить в смертельную схватку с магами Западого Храма.<br/>
+		Герои снова на распутье и полны сомнений. Можно ли доверять тем, кого считаешь своими друзьями? Как остановить кровожадную преследовательницу, 
+		идущую по пятам? И что принесёт судьбоносная встреча с таинственным Хранителем Заповедей?</div>
 		<div class="book-meta">
 		   <div><strong>📖 Том:</strong> <span>III</span></div>
-		   <div><strong>📅 Год:</strong> <span>2025</span></div>
-		   <div><strong>📄 Страниц:</strong> <span>380</span></div>
+		   <div><strong>📅 Год:</strong> <span>2026</span></div>
+		   <div><strong>📄 Страниц:</strong> <span>296</span></div>
 		   <div><strong>★ Рейтинг:</strong> <span>4.9/5.0</span></div>
 		</div>
 	   </div>
@@ -1345,23 +1544,23 @@ transform: translateY(0);
 </div>
 
 <script>
-(function() {
-  <!-- == КНОПКА НАВЕРХ == -->
-const btn = document.getElementById('scrollTopBtn');
-// Показываем/скрываем кнопку при скролле
-window.addEventListener('scroll',function(){
-	if(window.scrollY > 300) {btn.classList.add('show');}
-	else {btn.classList.remove('show');}
-	});
-// Плавный скролл наверх при клике
-btn.addEventListener('click',function(){
-	window.scrollTo({
-		top: 0,
-		behavior: 'smooth'
-		});
-	});
-
-  <!-- == ИНТЕРАКТИВНЫЙ БЛОК == -->
+        // ===== КНОПКА НАВЕРХ =====
+const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+ 
+	<!-- == ИНТЕРАКТИВНЫЙ БЛОК == -->
 const btnYes = document.getElementById('btnYes');
 const btnNo = document.getElementById('btnNo');
 const welcomeMsg = document.getElementById('welcomeMessage');
@@ -1417,81 +1616,121 @@ btnNo.addEventListener('click', function(){
 	hideNoButton();
 	});
 
-  <!-- == ЗВЕЗДНЫЙ РЕЙТИНГ == -->
-const stars = document.querySelectorAll('.stars-input input');
-const voteResult = document.getElementById('voteResult');
-
-stars.forEach(function(star){
-	star.addEventListener('change', function(){
-	  const value = this.value;
-	  const labels = {
-		'1': '1 ★',
-		'2': '2 ★★',
-		'3': '3 ★★★',
-		'4': '4 ★★★★',
-		'5': '5 ★★★★★'
-		};
-
-	  voteResult.innerHTML = 'Ваша оценка: <strong>' + (labels[value] || value + ' ★') + '</strong>';
-const resultText = voteResult.querySelector('strong');
-	if (resultText) {
-		resultText.style.transition = 'all 0.3s ease';
-		resultText.style.color = '#f0c850';
-		setTimeout(function() {
-			resultText.style.color = '#f0d8b0';
-			}, 800);
-		}
-	});	
-  });
-
-  <!-- == ПРОГРЕСС-БАРЫ == -->
-const fills = document.querySelectorAll('.progress-bar-fill');
-	fills.forEach(function(fill,index){
-		const targetWidth = fill.style.width;
-		fill.style.width = '0%';
-		setTimeout(function() {
-		fill.style.width = targetWidth;}, 300 + index * 150);		
-	});
-
-})();
-
-  <!-- == МОДАЛЬНЫЕ ОКНА == -->
-window.openModal = function (bookId){
-const modal = document.getElementById('modal' + bookId);
-	if (modal) {
-		modal.classList.add('active');
-		document.body.style.overflow = 'hidden';		
-		}
-};
-
-window.closeModal = function (bookId){
-const modal = document.getElementById('modal' + bookId);
-	if (modal) {
-		modal.classList.remove('active');
-		document.body.style.overflow = 'auto';		
-		}
-};
-
-
-document.querySelectorAll('.modal-overlay').forEach(function(overlay){
-	overlay.addEventListener('click', function(e){
-		if (e.target === this){
-			this.classList.remove('active');
-			document.body.style.overflow = 'auto';}	
-		});
-	});
-
-document.addEventListener('keydown', function(e){
-		if (e.key === 'Escape'){
-			document.querySelectorAll('.modal-overlay.active').forEach(function (modal){
-				modal.classList.remove('active');
-				document.body.style.overflow = 'auto';
-			});		
-		}
-	});
-
-
-
+ 
+        // ===== ЗВЁЗДНЫЙ РЕЙТИНГ =====
+        const stars = document.querySelectorAll('.stars-input input');
+        const voteResult = document.getElementById('voteResult');
+        const ratingCount = document.getElementById('ratingCount');
+ 
+        let totalRatings = 67;
+ 
+        function updateRatingCount() {
+            const suffix = getNumberSuffix(totalRatings);
+            ratingCount.textContent = 'Основано на ' + totalRatings + ' ' + suffix;
+        }
+ 
+        function getNumberSuffix(n) {
+            const lastDigit = n % 10;
+            const lastTwoDigits = n % 100;
+            
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+                return 'оценках';
+            }
+            
+            if (lastDigit === 1) {
+                return 'оценке';
+            } else if (lastDigit >= 2 && lastDigit <= 4) {
+                return 'оценках';
+            } else {
+                return 'оценках';
+            }
+        }
+ 
+        updateRatingCount();
+ 
+        stars.forEach(function(star) {
+            star.addEventListener('change', function() {
+                const value = this.value;
+                const labels = {
+                    '1': '1 ⭐',
+                    '2': '2 ⭐⭐',
+                    '3': '3 ⭐⭐⭐',
+                    '4': '4 ⭐⭐⭐⭐',
+                    '5': '5 ⭐⭐⭐⭐⭐'
+                };
+                
+                
+                voteResult.innerHTML = 'Ваша оценка: <strong>' + (labels[value] || value + ' ⭐') + '</strong>';
+                
+                const resultText = voteResult.querySelector('strong');
+                if (resultText) {
+                    resultText.style.transition = 'all 0.3s ease';
+                    resultText.style.color = '#f0c850';
+                    setTimeout(function() {
+                        resultText.style.color = '#f0d8b0';
+                    }, 800);
+                }
+ 
+                    if (!this.dataset.voted) {
+                    this.dataset.voted = 'true';
+                    totalRatings += 1;
+                    updateRatingCount();
+                    
+                    ratingCount.style.transition = 'all 0.3s ease';
+                    ratingCount.style.color = '#f0c850';
+                    setTimeout(function() {
+                        ratingCount.style.color = '#b8a085';
+                    }, 800);
+                }
+            });
+        });
+ 
+        // ===== АНИМАЦИЯ ПРОГРЕСС-БАРОВ =====
+        const fills = document.querySelectorAll('.progress-bar-fill');
+        fills.forEach(function(fill, index) {
+            const targetWidth = fill.style.width;
+            fill.style.width = '0%';
+            setTimeout(function() {
+                fill.style.width = targetWidth;
+            }, 300 + index * 150);
+        });
+ 
+        // ===== МОДАЛЬНЫЕ ОКНА (ГЛОБАЛЬНЫЕ ФУНКЦИИ) =====
+        window.openModal = function(bookId) {
+            const modal = document.getElementById('modal' + bookId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        };
+ 
+        window.closeModal = function(bookId) {
+            const modal = document.getElementById('modal' + bookId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        };
+ 
+        // Закрытие по клику на фон
+        document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+ 
+        // Закрытие по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
 </script>
 
 </body>
